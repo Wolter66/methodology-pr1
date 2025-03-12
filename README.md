@@ -11,4 +11,4 @@ https://asciinema.org/a/AfyqRueeGA2mhQPfyGuqsLcVO
 
 ## CodeClimat
 
-<a href="https://codeclimate.com/github/Wolter66/methodology-pr1"><img src="https://api.codeclimate.com/v1/badges/45d78109810179ece13a/maintainability" /></a>
+<a href="https://codeclimate.com/github/Wolter66/methodology-pr1/maintainability"><img src="https://api.codeclimate.com/v1/badges/01c4bb1b96c350d79faa/maintainability" /></a>
