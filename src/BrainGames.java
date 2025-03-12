@@ -65,15 +65,7 @@ public final class BrainGames {
 
       int correctAnswer = lcm(a, lcm(b, c));
       System.out.println("Question: " + a + " " + b + " " + c);
-      System.out.print("Your answer: ");
-      int userAnswer = scanner.nextInt();
-
-      if (userAnswer == correctAnswer) {
-        System.out.println("Correct!");
-      } else {
-        System.out.println("'" + userAnswer + "' is wrong answer ;(. "
-            + "Correct answer was '" + correctAnswer + "'.");
-        System.out.println("Let's try again, " + name + "!");
+      if (checkAnswer(scanner, name, correctAnswer)) {
         return;
       }
     }
@@ -99,6 +91,7 @@ public final class BrainGames {
       for (int j = 0; j < length; j++) {
         progression[j] = start * (int) Math.pow(ratio, j);
       }
+      final int correctAnswer = progression[hiddenIndex];
       progression[hiddenIndex] = -1;
 
       System.out.print("Question: ");
@@ -111,20 +104,26 @@ public final class BrainGames {
       }
       System.out.println();
 
-      System.out.print("Your answer: ");
-      int userAnswer = scanner.nextInt();
-
-      int correctAnswer = progression[hiddenIndex];
-      if (userAnswer == correctAnswer) {
-        System.out.println("Correct!");
-      } else {
-        System.out.println("'" + userAnswer + "' is wrong answer ;(. "
-            + "Correct answer was '" + correctAnswer + "'.");
-        System.out.println("Let's try again, " + name + "!");
+      if (checkAnswer(scanner, name, correctAnswer)) {
         return;
       }
     }
     System.out.println("Congratulations, " + name + "!");
+  }
+
+  private static boolean checkAnswer(Scanner scanner, String name, int correctAnswer) {
+    System.out.print("Your answer: ");
+    int userAnswer = scanner.nextInt();
+
+    if (userAnswer == correctAnswer) {
+      System.out.println("Correct!");
+    } else {
+      System.out.println("'" + userAnswer + "' is wrong answer ;(. "
+          + "Correct answer was '" + correctAnswer + "'.");
+      System.out.println("Let's try again, " + name + "!");
+      return true;
+    }
+    return false;
   }
 
   /**
