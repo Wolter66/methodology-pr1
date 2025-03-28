@@ -8,11 +8,11 @@ import java.util.Random;
  */
 public class LcmGame implements Game {
 
-  private int a;
+  private int firstNumber;
 
-  private int b;
+  private int secondNumber;
 
-  private int c;
+  private int thirdNumber;
 
   private int correctAnswer;
 
@@ -25,15 +25,15 @@ public class LcmGame implements Game {
 
   @Override
   public void generateRound() {
-    a = random.nextInt(50) + 1;
-    b = random.nextInt(50) + 1;
-    c = random.nextInt(50) + 1;
-    correctAnswer = lcm(a, lcm(b, c));
+    firstNumber = random.nextInt(50) + 1;
+    secondNumber = random.nextInt(50) + 1;
+    thirdNumber = random.nextInt(50) + 1;
+    correctAnswer = lcm(firstNumber, lcm(secondNumber, thirdNumber));
   }
 
   @Override
   public String getQuestion() {
-    return a + " " + b + " " + c;
+    return firstNumber + " " + secondNumber + " " + thirdNumber;
   }
 
   @Override

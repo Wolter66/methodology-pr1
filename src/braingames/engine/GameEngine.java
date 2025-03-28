@@ -27,7 +27,7 @@ public class GameEngine {
       int userAnswer = scanner.nextInt();
       if (userAnswer != game.getCorrectAnswer()) {
         System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-          + game.getCorrectAnswer() + "'.");
+            + game.getCorrectAnswer() + "'.");
         System.out.println("Let's try again, " + playerName + "!");
         return;
       } else {
